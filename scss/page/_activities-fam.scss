@@ -1,0 +1,43 @@
+@use '../abstract' as *;
+@use '../component' as *;
+
+.banner--activity {
+    background-image: url('../../images/activitiesfam/Family-MobileBanner-banner-mobile.jpeg');
+    @include mediaQuery {
+        background-image: url('../../images/activitiesfam/Family-DesktopBanner-banner.jpeg');
+    }
+}
+
+.activity {
+    &__card {
+        @include mediaQuery {
+            @include unevenGrid(1fr 2fr, 5rem); 
+            margin-bottom: 5rem;
+
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            div {
+                flex-grow: 1;
+            }
+
+        }
+        img {
+            @include imgCover(100%, 100%);
+            border-radius: 1rem;
+        }
+
+
+        h2 {
+            font-size: clamp(2rem, 8vw, 4rem);
+        }
+
+        .btn {
+            @include mediaQuery {
+                width: 50%
+            }
+        }
+    }
+}
